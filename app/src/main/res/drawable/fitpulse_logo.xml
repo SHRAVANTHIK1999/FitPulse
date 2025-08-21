@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="32dp"
+    android:height="32dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Circular gradient background -->
+    <path
+        android:name="bg"
+        android:pathData="M12,2a10,10 0 1,0 0,20a10,10 0 1,0 0,-20">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="5"
+                android:startY="4"
+                android:endX="19"
+                android:endY="20">
+                <!-- tweak these two colors if you want a different gradient -->
+                <item android:offset="0" android:color="#FF4DA3FF"/>  <!-- blue -->
+                <item android:offset="1" android:color="#FF7B4DFF"/>  <!-- purple -->
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Simple pulse mark (white line) -->
+    <path
+        android:pathData="M6,13 L9,13 L10.5,9 L12,15 L13.5,12 L18,12"
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"/>
+</vector>

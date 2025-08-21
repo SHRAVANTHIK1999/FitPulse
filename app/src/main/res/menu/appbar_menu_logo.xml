@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Logo pinned at top-right (no tinting) -->
+    <item
+        android:id="@+id/menu_logo"
+        android:icon="@drawable/fitpulse_logo"
+        android:title="@string/app_name"
+        android:enabled="false"
+        android:checkable="false"
+        app:iconTint="@null"
+        app:showAsAction="always" />
+</menu>

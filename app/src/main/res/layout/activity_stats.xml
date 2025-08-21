@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/bg_fitpulse"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Header Row: Logo + Title + Week Dropdown -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <!-- ONLY CHANGE: icon -> fitpulse_logo -->
+        <ImageView
+            android:id="@+id/btn_back_home"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/fitpulse_logo"
+            android:contentDescription="Home"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/text_stats_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Stats"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+        <Spinner
+            android:id="@+id/spinner_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/time_filters"
+            android:spinnerMode="dropdown" />
+    </LinearLayout>
+
+    <!-- Bar Chart -->
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/bar_chart"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Step Summary List (fills remaining space; Today, Yesterday, Previous Day rows) -->
+    <LinearLayout
+        android:id="@+id/step_history_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:divider="?android:attr/dividerVertical"
+        android:showDividers="none"
+        android:paddingHorizontal="8dp" />
+
+    <!-- Quote -->
+    <TextView
+        android:id="@+id/quote_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Small steps today lead to big changes tomorrow."
+        android:textAlignment="center"
+        android:textStyle="italic"
+        android:textColor="#666666"
+        android:textSize="14sp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_nav_background"
+        app:itemIconTint="@color/bottom_nav_color_selector"
+        app:itemTextColor="@color/bottom_nav_color_selector"
+        app:menu="@menu/bottom_nav_menu"
+        android:elevation="4dp" />
+</LinearLayout>

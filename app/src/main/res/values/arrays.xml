@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Week filter options for StatsActivity -->
+    <string-array name="time_filters">
+        <item>This week</item>
+        <item>Last week</item>
+    </string-array>
+</resources>
