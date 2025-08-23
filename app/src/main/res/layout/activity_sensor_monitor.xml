@@ -111,56 +111,118 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- TOP CARD → Gyroscope -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_accel"
+        <!-- TOP ROW → Gyroscope & Accelerometer side-by-side -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="16dp"
-            app:cardUseCompatPadding="true"
-            app:cardElevation="4dp">
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <!-- Gyroscope (kept exactly as before; just moved into this row) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_accel"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:layout_weight="1"
+                android:layout_marginEnd="0dp"
+                app:cardCornerRadius="16dp"
+                app:cardUseCompatPadding="true"
+                app:cardElevation="4dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Gyroscope"
-                    android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:textSize="16sp"/>
-
-                <!-- Sensor value panel -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/metric_value_bg"
-                    android:padding="12dp">
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <TextView
-                        android:id="@+id/gyro_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gyroscope"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <!-- Sensor value panel -->
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="X: 0.00\nY: 0.00\nZ: 0.00"
-                        android:fontFamily="monospace"
-                        android:textColor="@android:color/black"
-                        android:textSize="15sp"
-                        android:lineSpacingExtra="6dp"/>
-                </LinearLayout>
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/metric_value_bg"
+                        android:padding="12dp">
 
-                <View
+                        <TextView
+                            android:id="@+id/gyro_data"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="X: 0.00\nY: 0.00\nZ: 0.00"
+                            android:fontFamily="monospace"
+                            android:textColor="@android:color/black"
+                            android:textSize="15sp"
+                            android:lineSpacingExtra="6dp"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/dashed_divider"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Accelerometer (new card) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_accelerometer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="0dp"
+                app:cardCornerRadius="16dp"
+                app:cardUseCompatPadding="true"
+                app:cardElevation="4dp">
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/dashed_divider"/>
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Accelrometer"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <!-- Sensor value panel -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/metric_value_bg"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/accel_data"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="X: 0.00\nY: 0.00\nZ: 0.00"
+                            android:fontFamily="monospace"
+                            android:textColor="@android:color/black"
+                            android:textSize="15sp"
+                            android:lineSpacingExtra="6dp"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/dashed_divider"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
 
         <!-- BOTTOM CARD → BMI (inputs/button denser so Status fits) -->
         <com.google.android.material.card.MaterialCardView
