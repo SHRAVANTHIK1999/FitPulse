@@ -29,6 +29,7 @@ The FitPulse app is a lightweight Android tracker that covers accurate step coun
 
 
 **Screenshots:**
+
 <img width="587" height="513" alt="Screenshot 2025-09-04 at 17 57 45" src="https://github.com/user-attachments/assets/e1ab5fa6-7ea2-4a0f-ac05-94ed9b72dd88" />
 <img width="579" height="460" alt="Screenshot 2025-09-04 at 17 57 55" src="https://github.com/user-attachments/assets/3cacdd38-1cc3-44c9-9b22-dfc46366c5e2" />
 <img width="577" height="446" alt="Screenshot 2025-09-04 at 17 58 03" src="https://github.com/user-attachments/assets/5141d7d1-59b6-4f26-aacf-0c5545c137b3" />
